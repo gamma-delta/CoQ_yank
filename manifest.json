@@ -1,0 +1,9 @@
+{
+  "config": {
+    "id": "yanks",
+    "title": "Yank!",
+    "description": "Replaces recoilers with \"yanks,\" which are limited use.",
+    "author": "petrak@",
+    "version": "0.1.0"
+  }
+}
