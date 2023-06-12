@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<populations />
+<populations>
+  <population Name="Artifact 0R" Load="Merge">
+    <group Name="Items">
+      <object Weight="20" Number="1" Blueprint="pkrcx_geofoldyank" />
+    </group>
+  </population>
+  <population Name="Artifact 1C" Load="Merge">
+    <group Name="Items">
+      <object Weight="1" Number="1" Blueprint="pkrcx_geofoldyank" />
+    </group>
+  </population>
+  <population Name="Artifact 2R" Load="Merge">
+    <group Name="Items">
+      <object Weight="1" Number="1" Blueprint="pkrcx_geofoldyank" />
+    </group>
+  </population>
+</populations>

@@ -6,83 +6,103 @@
     <part Name="Examiner" Unknown="UnknownSmallStone" Alternate="UnknownSmallCircularStone" Complexity="2" Difficulty="1" />
     <part Name="Description" Short="A fragile crystalline disk with a recessed button on top. It shivers in your hands" />
 
-    <part Name="PKRCX_Yanker" />
+    <part Name="PKYNK_Yanker" />
     <part Name="Capacitor" StartCharge="1d2" MaxCharge="2" IsRechargable="false" ChargeDisplayStyle="amount" AltChargeDisplayStyle="amount" />
-    <removepart Name="EnergyCellSlot" />
 
     <part Name="TinkerItem" Bits="012" CanDisassemble="true" CanBuild="true" />
     <tag Name="TechTier" Value="3" />
     <tag Name="BaseObject" Value="*noinherit" />
-    <tag Name="TinkerCategory" Value="utility" />
     <stag Name="Travel" />
 
     <removepart Name="EnergyCell" />
     <removepart Name="Teleporter" />
-    <removepart Name="EnergyCellSlot" />
+    <removepart Name="EnergyCellSocket" />
   </object>
-  <object Name="pkrcx_geofoldyank" Inherits="BaseRecoiler">
+  <object Name="pkynk_geofoldyank" Inherits="BaseRecoiler">
     <part Name="Render" DisplayName="{{g|geofold}} yank" />
-    <part Name="TinkerItem" Bits="001" CanDisassemble="true" CanBuild="true" />
+    <part Name="PKYNK_Yanker" Destination="@SURFACE" />
     <part Name="Capacitor" StartCharge="1d4" MaxCharge="4" />
+    <part Name="TinkerItem" Bits="001" />
 
-    <part Name="PKRCX_Yanker" Destination="@SURFACE" />
+    <part Name="Commerce" Value="10" />
+    <tag Name="Tier" Value="1" />
+
   </object>
   <!-- edit vanilla coilers -->
-  <object Name="Joppa Recoiler" Inherits="BaseRecoiler">
+  <object Name="Joppa Recoiler" Inherits="BaseRecoiler" Load="Merge">
     <part Name="Render" DisplayName="Joppa yank" />
-    <part Name="PKRCX_Yanker" Destination="JoppaWorld.11.22.1.1.10" DestinationX="37" DestinationY="23" />
+    <part Name="PKYNK_Yanker" Destination="JoppaWorld.11.22.1.1.10" DestinationX="37" DestinationY="23" />
     <part Name="Commerce" Value="5" />
     <tag Name="Tier" Value="2" />
 
     <part Name="TinkerItem" CanBuild="true" />
     <removepart Name="Teleporter" />
   </object>
-  <object Name="Grit Gate Recoiler" Inherits="BaseRecoiler">
+  <object Name="Grit Gate Recoiler" Inherits="BaseRecoiler" Load="Merge">
     <part Name="Render" DisplayName="{{c|Grit Gate}} yank" DetailColor="C" />
-    <part Name="PKRCX_Yanker" Destination="JoppaWorld.22.14.1.0.13" DestinationX="37" DestinationY="23" />
+    <part Name="PKYNK_Yanker" Destination="JoppaWorld.22.14.1.0.13" DestinationX="37" DestinationY="23" />
     <part Name="Commerce" Value="7" />
     <tag Name="Tier" Value="3" />
+
+    <part Name="TinkerItem" CanBuild="true" />
+    <removepart Name="Teleporter" />
   </object>
-  <object Name="Golgotha Recoiler" Inherits="BaseRecoiler">
+  <object Name="Golgotha Recoiler" Inherits="BaseRecoiler" Load="Merge">
     <part Name="Render" DisplayName="{{g|Golgotha}} recoiler" />
-    <part Name="PKRCX_Yanker" Destination="JoppaWorld.23.9.1.1.10" />
+    <part Name="PKYNK_Yanker" Destination="JoppaWorld.23.9.1.1.10" />
     <part Name="Commerce" Value="20" />
     <tag Name="Tier" Value="3" />
+
+    <part Name="TinkerItem" CanBuild="true" />
+    <removepart Name="Teleporter" />
   </object>
-  <object Name="Kyakukya Recoiler" Inherits="BaseRecoiler">
+  <object Name="Kyakukya Recoiler" Inherits="BaseRecoiler" Load="Merge">
     <part Name="Render" DisplayName="{{R|Kyakukya}} recoiler" />
-    <part Name="PKRCX_Yanker" Destination="JoppaWorld.27.20.1.1.10" DestinationX="32" DestinationY="15" />
+    <part Name="PKYNK_Yanker" Destination="JoppaWorld.27.20.1.1.10" DestinationX="32" DestinationY="15" />
     <part Name="Commerce" Value="10" />
     <tag Name="Tier" Value="4" />
+
     <part Name="TinkerItem" CanBuild="true" />
     <removepart Name="Teleporter" />
   </object>
   <!-- Making stilt yanks more common because why is the stilt as difficult to get to as golgotha?
   do most people not rush stilt?
   -->
-  <object Name="Six Day Stilt Recoiler" Inherits="BaseRecoiler">
+  <object Name="Six Day Stilt Recoiler" Inherits="BaseRecoiler" Load="Merge">
     <part Name="Render" DisplayName="{{Y|Six Day Stilt}} yank" />
-    <part Name="PKRCX_Yanker" Destination="JoppaWorld.5.2.1.2.10" DestinationX="38" DestinationY="12" />
+    <part Name="PKYNK_Yanker" Destination="JoppaWorld.5.2.1.2.10" DestinationX="38" DestinationY="12" />
     <part Name="Commerce" Value="7" />
     <tag Name="Tier" Value="3" />
+
+    <part Name="TinkerItem" CanBuild="true" />
+    <removepart Name="Teleporter" />
   </object>
-  <object Name="Bethesda Susa Recoiler" Inherits="BaseRecoiler">
+  <object Name="Bethesda Susa Recoiler" Inherits="BaseRecoiler" Load="Merge">
     <part Name="Render" DisplayName="{{C|Bethesda Susa}} yank" />
-    <part Name="PKRCX_Yanker" Destination="JoppaWorld.25.3.1.1.10" DestinationX="38" DestinationY="19" />
+    <part Name="PKYNK_Yanker" Destination="JoppaWorld.25.3.1.1.10" DestinationX="38" DestinationY="19" />
     <part Name="Commerce" Value="20" />
     <tag Name="Tier" Value="4" />
+
+    <part Name="TinkerItem" CanBuild="true" />
+    <removepart Name="Teleporter" />
   </object>
-  <object Name="Ezra Recoiler" Inherits="BaseRecoiler">
+  <object Name="Ezra Recoiler" Inherits="BaseRecoiler" Load="Merge">
     <part Name="Render" DisplayName="{{W|Ezra}} yank" />
-    <part Name="PKRCX_Yanker" Destination="JoppaWorld.53.4.0.0.10" DestinationX="40" DestinationY="18" />
+    <part Name="PKYNK_Yanker" Destination="JoppaWorld.53.4.0.0.10" DestinationX="40" DestinationY="18" />
     <part Name="Commerce" Value="25" />
     <tag Name="Tier" Value="5" />
+
+    <part Name="TinkerItem" CanBuild="true" />
+    <removepart Name="Teleporter" />
   </object>
-  <object Name="Yd Freehold Recoiler" Inherits="BaseRecoiler">
+  <object Name="Yd Freehold Recoiler" Inherits="BaseRecoiler" Load="Merge">
     <part Name="Render" DisplayName="{{W|Yd Freehold}} yank" />
-    <part Name="PKRCX_Yanker" Destination="JoppaWorld.67.17.1.1.10" DestinationX="37" DestinationY="23" />
+    <part Name="PKYNK_Yanker" Destination="JoppaWorld.67.17.1.1.10" DestinationX="37" DestinationY="23" />
     <part Name="Commerce" Value="50" />
     <tag Name="Tier" Value="7" />
+
+    <part Name="TinkerItem" CanBuild="true" />
+    <removepart Name="Teleporter" />
   </object>
   <!-- remove ruin and programmable ones, for now replace them with just valuable objects -->
   <object Name="pkrcx_nonrecoiler">
@@ -91,6 +111,10 @@
     <part Name="Description" Short="Before the world was spun into being, a creator sought to excise from it the power of instantaneous transportation. But the weft and warp of the world resisted her, and small anomalies remain. This is one such anomaly; although it no longer functions, it may be sold or disassembled." />
     <part Name="TinkerItem" Bits="3456" CanDisassemble="true" CanBuild="false" />
     <part Name="Commerce" Value="200" />
+
+    <tag Name="Mods" Value="None" />
+    <tag Name="Storied" Value="true" />
+    <property Name="Story" Value="pkynk_cislocational" />
 
     <tag Name="BaseObject" Value="*noinherit" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />

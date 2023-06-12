@@ -4,18 +4,21 @@ using XRL.Language;
 
 namespace XRL.World.Parts {
   [Serializable]
-  public class PKRCX_Yanker : IActivePart {
+  public class PKYNK_Yanker : IActivePart {
     public static readonly string ACTIVATE_KEY = "ActivateTeleporter";
 
     public string Destination;
     public int DestinationX = -1, DestinationY = -1;
     public string Sound = "sfx_ability_recoiler_use";
 
-    public PKRCX_Yanker() {
+    public int UsesLeft = 4;
+    public int MaxUses = 4;
+
+    public PKYNK_Yanker() {
       this.IsEMPSensitive = true;
       this.IsRealityDistortionBased = true;
       this.IsTechScannable = true;
-      this.ChargeUse = 1;
+      this.ChargeUse = 0;
       this.ChargeMinimum = 0;
 
       // Carrier = the owner of the inventory
@@ -96,8 +99,7 @@ namespace XRL.World.Parts {
       }
 
       // zoop!
-      int powerLeft = ParentObject.QueryCharge(IncludeBiological: false);
-      bool finalUse = powerLeft <= 1;
+      bool finalUse = this.UsesLeft <= 1;
       bool worked = user.ZoneTeleport(destZone, destX, destY, causingEvent, ParentObject, user, SuccessMessage:
           finalUse
             ? "The yank shatters as you are yanked!"
@@ -110,7 +112,7 @@ namespace XRL.World.Parts {
       if (!Sound.IsNullOrEmpty()) {
         user.PlayWorldSound(Sound, 0.5f, 0f, false, 0f);
       }
-      ParentObject.UseCharge(1, IncludeBiological: false);
+      this.UsesLeft = -1;
       if (finalUse) {
         ParentObject.Destroy();
       }
