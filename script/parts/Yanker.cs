@@ -11,9 +11,6 @@ namespace XRL.World.Parts {
     public int DestinationX = -1, DestinationY = -1;
     public string Sound = "sfx_ability_recoiler_use";
 
-    public int UsesLeft = 4;
-    public int MaxUses = 4;
-
     public PKYNK_Yanker() {
       this.IsEMPSensitive = true;
       this.IsRealityDistortionBased = true;
@@ -27,10 +24,12 @@ namespace XRL.World.Parts {
     }
 
     public override bool WantEvent(int ID, int cascade) {
-      return ID == GetInventoryActionsEvent.ID
+      return true
+          || ID == GetInventoryActionsEvent.ID
           || ID == InventoryActionEvent.ID
           || base.WantEvent(ID, cascade);
     }
+
 
     public override bool HandleEvent(GetInventoryActionsEvent E) {
       E.AddAction("Activate", "activate", ACTIVATE_KEY, Key: 'a', Default: 100);
@@ -99,11 +98,8 @@ namespace XRL.World.Parts {
       }
 
       // zoop!
-      bool finalUse = this.UsesLeft <= 1;
-      bool worked = user.ZoneTeleport(destZone, destX, destY, causingEvent, ParentObject, user, SuccessMessage:
-          finalUse
-            ? "The yank shatters as you are yanked!"
-            : "You are yanked!");
+      bool worked = user.ZoneTeleport(destZone, destX, destY, causingEvent, ParentObject, user,
+        SuccessMessage: "The world turns as the yank shatters!");
       if (!worked) {
         return false;
       }
@@ -112,10 +108,7 @@ namespace XRL.World.Parts {
       if (!Sound.IsNullOrEmpty()) {
         user.PlayWorldSound(Sound, 0.5f, 0f, false, 0f);
       }
-      this.UsesLeft = -1;
-      if (finalUse) {
-        ParentObject.Destroy();
-      }
+      ParentObject.Destroy();
       causingEvent?.RequestInterfaceExit();
       return true;
     }
