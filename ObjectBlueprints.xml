@@ -6,7 +6,7 @@
     <part Name="Examiner" Unknown="UnknownSmallStone" Alternate="UnknownSmallCircularStone" Complexity="2" Difficulty="1" />
     <part Name="Description" Short="A fragile crystalline disk with a recessed button on top. It shivers in your hands." />
 
-    <part Name="PKYNK_Yanker" UsesLeft="1d2" />
+    <part Name="PKYNK_Yanker" />
 
     <part Name="TinkerItem" Bits="012" CanDisassemble="true" CanBuild="true" />
     <tag Name="TechTier" Value="3" />
@@ -20,7 +20,7 @@
   </object>
   <object Name="pkynk_geofoldyank" Inherits="BaseRecoiler">
     <part Name="Render" DisplayName="{{g|geofold}} yank" />
-    <part Name="PKYNK_Yanker" Destination="@SURFACE" UsesLeft="1d4" />
+    <part Name="PKYNK_Yanker" Destination="@SURFACE" />
     <part Name="TinkerItem" Bits="001" />
 
     <part Name="Commerce" Value="10" />
@@ -108,8 +108,7 @@
     <part Name="Render" DisplayName="cislocational curiosity" ColorString="&amp;M" DetailColor="m" RenderString="004" RenderLayer="5" Tile="Items/sw_recoiler.bmp" />
     <part Name="Physics" Category="Tools" />
     <part Name="Description" Short="Before the world was spun into being, a creator sought to excise from it the power of instantaneous transportation. But the weft and warp of the world resisted her, and small anomalies remain. This is one such anomaly; although it no longer functions, it may be sold or disassembled." />
-    <part Name="TinkerItem" Bits="3456" CanDisassemble="true" CanBuild="false" />
-    <part Name="Commerce" Value="200" />
+    <part Name="TinkerItem" Bits="345678" CanDisassemble="true" CanBuild="false" />
 
     <tag Name="Mods" Value="None" />
     <tag Name="Storied" Value="true" />
@@ -120,14 +119,17 @@
   </object>
   <object Name="Ruin Recoiler" Inherits="pkrcx_nonrecoiler">
     <part Name="Render" DisplayName="cislocational curiosity I" />
+    <part Name="Commerce" Value="300" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
   <object Name="Programmable Recoiler">
     <part Name="Render" DisplayName="cislocational curiosity II" />
+    <part Name="Commerce" Value="400" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
   <object Name="Reprogrammable Recoiler">
     <part Name="Render" DisplayName="cislocational curiosity III" />
+    <part Name="Commerce" Value="600" />
     <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
   </object>
 </objects>
