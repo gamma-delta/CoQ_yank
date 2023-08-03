@@ -1,9 +1,8 @@
 {
-  "config": {
-    "id": "petrakat_yank",
-    "title": "Yank!",
-    "description": "Replaces recoilers with \"yanks,\" which can only be used once. Github: https://github.com/gamma-delta/CoQ_yank",
-    "author": "petrak@",
-    "version": "0.1.0"
-  }
+  "ID": "petrakat_yank",
+  "Title": "Yank!",
+  "Description": "Replaces recoilers with \"yanks,\" which can only be used once. Github: https://github.com/gamma-delta/CoQ_yank",
+  "Author": "petrak@",
+  "Version": "0.1.0",
+  "PreviewImage": "thumbnail.png"
 }
