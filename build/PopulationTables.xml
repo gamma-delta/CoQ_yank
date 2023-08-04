@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <populations>
+<!--
+ XXX: Do we still want to use some of this for e.g. reprogrammables?
+    * They're significantly nerfed by the change, so if we'd like to eat those
+    * for geofolds anyway, it'd be a viable choice.
+
+    * Shame to lose Cislocational Curiosity, too; it's a real nice bit of work.
+
+    * - winfy
+
   <population Name="Artifact 0C" Load="Merge">
     <group Name="Items">
       <object Weight="1" Number="1" Blueprint="pkynk_geofoldyank" />
@@ -20,4 +29,5 @@
       <object Weight="1" Number="1d2" Blueprint="pkynk_geofoldyank" />
     </group>
   </population>
+-->
 </populations>

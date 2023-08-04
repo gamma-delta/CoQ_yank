@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations>
+  <!-- We patch any canon dialogue that references recoilers to discuss yanks instead.
+       This is currently (August 2023) just Argyve and Mafeo; but we may want to update if the topic
+       ends up coming up again at some point. -->
+  <conversation ID="JoppaArgyve" Load="Merge">
+    <node ID="GiveWire">
+      <text>
+        Yes, yes! Wire! Beautiful wire! Oh, before I forget or cease to care, I threw together a yank for you. Use it if you need to return to Joppa quickly. Now give me a few minutes alone to attach the wire.
+      </text>
+    </node>
+  </conversation>
+  <conversation ID="Mafeo" Load="Merge">
+    <node ID="WhatWares">
+      <text>
+        Oh, I sell whatever sundries that meet my standards of quality, with some measure of curation. I try to ensure that my shelves carry a bit of many things, but you can count on finding more than enough ammunition and a few yanks that can pull you back here in difficult times.
+
+        If you have anything in need of identification or repair, I can take care of that for you for a few drams as well.
+      </text>
+    </node>
+  </conversation>
+  <conversation ID="Rokhas" Load="Merge">
+    <node ID="Hometown">
+      <text>
+        Lived most of m'life on a desert steppe twixt the flower fields of Qud and the M'ryee's salt pans.
+
+        I ended up here when m'snapbrain cousin played tinker with one of them yankee doodads. The less said about all that, the better.
+      </text>
+    </node>
+  </conversation>
+</conversations>
