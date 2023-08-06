@@ -64,4 +64,12 @@
     <part Name="Commerce" Value="70" />
     <part Name="ProgrammableRecoiler" ChargeUse="0" />
   </object>
+
+  <!-- True kin are not spared: OnboardRecoiler gets the treatment too. We give it five shots before it fizzles. -->
+  <object Name="OnboardRecoiler" Load="Merge">
+    <part Name="CyberneticsBaseItem" BehaviorDescription="You can imprint this implant with a location (cooldown 100) and yank yourself back to it (cooldown 50), up to five times." />
+    <!-- We attach our custom Yank part, with different params: don't make it tinkerable, but it's a 5-shot and displays as such. -->
+    <part Name="PKYNK_YankMod" ReplaceName="true" NumUses="5" ModifyDisplay="true" />
+  </object>
+
 </objects>

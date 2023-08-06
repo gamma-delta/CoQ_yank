@@ -14,12 +14,24 @@ namespace XRL.World.Parts {
     ///    (Individual mods who want other behavior can of course unset these flags in their own objects.)
     [Serializable]
     public class PKYNK_YankMod : IPart {
-
+        public int NumUses = 1; // Consume on the very first use.
+        public bool ModifyDisplay = false; // If set, show remaining uses in display name.
         public bool ReplaceName = false; // If set, replace 'recoiler' with 'yank' in the object name.
         public bool MakeAlwaysTinkerable = false; // If set, overwrite TinkerItem.CanBuild to be true.
 
         public override bool WantEvent(int ID, int cascade) =>
-            ID == ObjectCreatedEvent.ID || base.WantEvent(ID, cascade);
+            ID == ObjectCreatedEvent.ID || (ModifyDisplay && ID == GetDisplayNameEvent.ID) || base.WantEvent(ID, cascade);
+        
+        public string NUses() {
+            return NumUses + (NumUses == 1 ? " use" : " uses") + " left";
+        }
+
+        public override bool HandleEvent(GetDisplayNameEvent E) {
+            if (ModifyDisplay && E.Understood()) {
+                E.AddTag("[{{W|" + NUses() + "}}]");
+            }
+            return true;
+        }
 
         public override bool HandleEvent(ObjectCreatedEvent E) {
             if (ReplaceName && ParentObject.GetPart<Render>() is Render render && render.DisplayName != null) {
@@ -29,6 +41,17 @@ namespace XRL.World.Parts {
                 ti.CanBuild = true;
             }
             return true;
+        }
+
+        // Try to consume this yank. Return the message to display.
+        public string ConsumeWithMessage() {
+            NumUses--;
+            if (NumUses <= 0) {
+                var message = "The world turns as " + ParentObject.the + ParentObject.ShortDisplayName + " shatters!";
+                ParentObject.Destroy("Yank shatters", true);
+                return message;
+            }
+            return "You are yanked away! (" + NUses() + ")";
         }
     }
 }

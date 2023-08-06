@@ -8,12 +8,11 @@ namespace Petrak.Yank {
         /// to reflect the destruction.
         public static string ModifyMessageAndDestroy(string message, IPart self) {
             var ob = self.ParentObject;
-            if (!ob.HasPart<PKYNK_YankMod>()) {
-                // oh, we're not a yank! sorry to bother you
-                return message;
+            if (ob.GetPart<PKYNK_YankMod>() is PKYNK_YankMod yankMod) {
+                return yankMod.ConsumeWithMessage();
             }
-            ob.Destroy("Yank shatters", true);
-            return "The world turns as the yank shatters!";
+            // oh, we're not a yank! sorry to bother you
+            return message;
         }
     }
 }
