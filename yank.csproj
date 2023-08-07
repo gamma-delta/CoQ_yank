@@ -8,7 +8,7 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
 		<QudLibPath>/home/petrak/.local/share/Steam/steamapps/common/Caves of Qud/CoQ_Data/Managed/</QudLibPath>
-    <DefaultItemExcludes>$(DefaultItemExcludes);./build/**</DefaultItemExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);build/**</DefaultItemExcludes>
 	</PropertyGroup>
 	<ItemGroup>
 		<Reference Include="$(QudLibPath)/0Harmony.dll" />
