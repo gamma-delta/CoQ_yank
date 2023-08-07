@@ -1,6 +1,7 @@
 (use cbt)
 
 (use ./src/object-blueprints)
+(use ./src/population-tables)
 
 (build-metadata
   :qud-dlls "/home/petrak/.local/share/Steam/steamapps/common/Caves of Qud/CoQ_Data/Managed/"
@@ -15,3 +16,6 @@
   :steam-visibility "2")
 
 (generate-xml "ObjectBlueprints.xml" object-blueprints)
+(generate-xml "PopulationTables.xml" population-tables)
+
+(set-debug-output true)

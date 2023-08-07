@@ -50,6 +50,7 @@
    # so i get to keep my cislocational curiosity
    [:object {:Name "Reprogrammable Recoiler"}
     (render "Items/sw_recoiler.bmp" "cislocational curiosity" white purple :cp437 (utf8->cp437 "♦"))
+    (commerce 500)
     (part "Physics" :Category "Trinket")
     (description "Before the world was spun into being, two creators sought to excise from it the convenience of instantaneous transportation. But the weft and warp of the world resisted them, and small anomalies remain. This is one such anomaly; although it no longer functions, it may be sold or disassembled.")
     (part "TinkerItem" :Bits "3456788" :CanDisassemble true :CanBuild false)
