@@ -20,13 +20,16 @@ namespace XRL.World.Parts {
         public bool MakeAlwaysTinkerable = false; // If set, overwrite TinkerItem.CanBuild to be true.
 
         public override bool WantEvent(int ID, int cascade) =>
-            ID == ObjectCreatedEvent.ID || (ModifyDisplay && ID == GetDisplayNameEvent.ID) || base.WantEvent(ID, cascade);
+            ID == ObjectCreatedEvent.ID || (ReplaceName || ModifyDisplay) && ID == GetDisplayNameEvent.ID || base.WantEvent(ID, cascade);
         
         public string NUses() {
             return NumUses + (NumUses == 1 ? " use" : " uses") + " left";
         }
 
         public override bool HandleEvent(GetDisplayNameEvent E) {
+            if (ReplaceName && E.GetPrimaryBase() is string pb) {
+                E.ReplacePrimaryBase(pb.Replace("recoiler", "yank"));
+            }
             if (ModifyDisplay && E.Understood()) {
                 E.AddTag("[{{W|" + NUses() + "}}]");
             }
